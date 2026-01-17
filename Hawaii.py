@@ -14,7 +14,7 @@ import matplotlib.tri as tri
 # Dataset download can be found in this link: https://drive.google.com/drive/folders/1qlt1otxXMTUnnoVofBgBoEKjgdw9Qd86?usp=share_link
 
 # read in the data as a geopandas dataframe
-hawaii=gpd.read_file('/Users/gustavoaguilar/Downloads/Datasets for Python Earth/Coastline.shp')
+hawaii=gpd.read_file('Coastline.shp')
 
 #Select only the data from island called "Hawaii".
 bigIsland=hawaii[(hawaii.isle=='Hawaii')]
@@ -26,8 +26,9 @@ bigIsland.plot(ax=ax,edgecolor='black',linewidth=1,facecolor='lightgreen')
 plt.title("Island of Hawaii")
 
 fig, ax = plt.subplots(figsize=(8,6))
+
 # read in the elevation data as a Pandas DatFrame.
-bigIslandElev=pd.read_csv('/Users/gustavoaguilar/Downloads/Datasets for Python Earth/BigIslandElev.csv')
+bigIslandElev=pd.read_csv('BigIslandElev.csv')
 # plot longitude as x, latitude as y and elevation as z:
 x=bigIslandElev.lon.values
 y=bigIslandElev.lat.values
@@ -36,6 +37,7 @@ plt.title("Elevation")
 ax.tricontourf(x,y,z)
 
 fig, ax = plt.subplots(figsize=(8,6))
+
 #Setting the ocean to blue.
 ax.set_facecolor('lightblue')
 bigIsland.plot(ax=ax,edgecolor='black',linewidth=1,facecolor='lightgreen')
@@ -47,10 +49,10 @@ UTM4='+proj=utm +zone=4 +ellps=GRS80 +datum=NAD83 +units=m'
 WGS84='+proj=longlat +ellps=WGS84 +datum=WGS84'
 
 #Get Big Island Flows in UTM
-bigIslandFlows=gpd.read_file('/Users/gustavoaguilar/Downloads/Datasets for Python Earth/BigIslandData.shp',crs=UTM4)
+bigIslandFlows=gpd.read_file('BigIslandData.shp',crs=UTM4)
 
 #Converting between coordinate systems 
-bigIslandFlows=gpd.read_file('/Users/gustavoaguilar/Downloads/Datasets for Python Earth/BigIslandData.shp',crs=UTM4).to_crs(WGS84)  # convert to WGS84
+bigIslandFlows=gpd.read_file('BigIslandData.shp',crs=UTM4).to_crs(WGS84)  # convert to WGS84
 
 fig, ax = plt.subplots(figsize=(8,6))
 #Setting the ocean to blue.
