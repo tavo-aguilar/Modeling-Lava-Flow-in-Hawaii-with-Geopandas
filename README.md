@@ -43,7 +43,7 @@ Lava flow modeling in the state of Hawaii from the past
 
 ## How to Run
 
-1. Download all the data from the following folder in this drive: https://drive.google.com/drive/folders/1qlt1otxXMTUnnoVofBgBoEKjgdw9Qd86?usp=share_link
+1. Download all the data from the following folder in this drive: https://drive.google.com/drive/folders/1qlt1otxXMTUnnoVofBgBoEKjgdw9Qd86?usp=share_link . The .shp files proved difficult to upload, so I made a drive folder containing all the necessary data.
 
 2. Make sure all required packages are installed: numpy, cartopy, geoplot, geopandas, matplotlib.pyplot, pandas. If any packages are missing, use the pip install [package] command into your IDE terminal to install required packages.
 
